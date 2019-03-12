@@ -6,8 +6,11 @@ using WebSite1;
 
 public partial class Account_Register : Page
 {
+    //DataClassesDataContext dc = new DataClassesDataContext();
+
     protected void CreateUser_Click(object sender, EventArgs e)
     {
+        User U = new User();
         var manager = new UserManager();
         var user = new ApplicationUser() { UserName = UserName.Text };
         IdentityResult result = manager.Create(user, Password.Text);
